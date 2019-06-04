@@ -77,9 +77,9 @@
                 %if "[[" in tool.description and "]]" in tool.description:
                     ${tool.description.replace( '[[', '<a id="link-${tool.id}" href="workflow_globals.app.add_node_for_tool( ${tool.id} )">' % tool.id ).replace( "]]", "</a>" )}
                 %elif tool.name:
-                    <a id="link-${tool.id}" href="javascript:void(0)" onclick="workflow_globals.app.add_node_for_tool( '${tool.id}', '${markupsafe.escape( tool.name ) | h}' )" style="text-decoration: none; display: block;"><span style="text-decoration: underline">${tool.name | h}</span> ${tool.description}</a>
+                    <a id="link-${tool.id}" role="button" href="javascript:void(0)" onclick="workflow_globals.app.add_node_for_tool( '${tool.id}', '${markupsafe.escape( tool.name ) | h}' )" style="text-decoration: none; display: block;"><span style="text-decoration: underline">${tool.name | h}</span> ${tool.description}</a>
                 %else:
-                    <a id="link-${tool.id}" href="javascript:void(0)" onclick="workflow_globals.app.add_node_for_tool( '${tool.id}', '${markupsafe.escape( tool.name ) | h}' )">${tool.description}</a>
+                    <a id="link-${tool.id}" role="button" href="javascript:void(0)" onclick="workflow_globals.app.add_node_for_tool( '${tool.id}', '${markupsafe.escape( tool.name ) | h}' )">${tool.description}</a>
                 %endif
             </div>
         %else:
@@ -114,14 +114,14 @@
 
 
 <%def name="render_module_section(module_section)">
-    <div class="toolSectionTitle" id="title___workflow__${module_section['name']}__">
+    <div class="toolSectionTitle" role="button" id="title___workflow__${module_section['name']}__">
         <span>${module_section["title"]}</span>
     </div>
     <div id="__workflow__${module_section['name']}__" class="toolSectionBody">
         <div class="toolSectionBg">
             %for module in module_section["modules"]:
                 <div class="toolTitle">
-                    <a href="javascript:void(0)" id="tool-menu-${module_section['name']}-${module['name']}" onclick="workflow_globals.app.add_node_for_module( '${module['name']}', '${module['title']}' )">
+                    <a role="button" href="javascript:void(0)" id="tool-menu-${module_section['name']}-${module['name']}" onclick="workflow_globals.app.add_node_for_module( '${module['name']}', '${module['title']}' )">
                         ${module['description']}
                     </a>
                 </div>
@@ -145,7 +145,7 @@
     <div class="unified-panel-controls">
         <div id="tool-search" class="bar">
             <input id="tool-search-query" class="search-query parent-width" name="query" placeholder="search tools" autocomplete="off" type="text">
-             <a id="search-clear-btn" title="" data-original-title="clear search (esc)"> </a>
+             <a id="search-clear-btn" aria-label="clear search" role="button" title="" data-original-title="clear search (esc)"> </a>
              <span id="search-spinner" class="search-spinner fa fa-spinner fa-spin"></span>
         </div>
     </div>
@@ -168,7 +168,7 @@
                             ${render_tool( val, False )}
                         %elif isinstance( val, ToolSection ) and val.elems:
                         <% section = val %>
-                            <div class="toolSectionTitle" id="title_${section.id}">
+                            <div class="toolSectionTitle" role="button" id="title_${section.id}">
                                 <span>${section.name}</span>
                             </div>
                             <div id="${section.id}" class="toolSectionBody">
@@ -191,7 +191,7 @@
                     %if trans.user_is_admin and trans.app.data_managers.data_managers:
                        <div>&nbsp;</div>
                        <div class="toolSectionWrapper">
-                           <div class="toolSectionTitle" id="title___DATA_MANAGER_TOOLS__">
+                           <div class="toolSectionTitle" role="button" id="title___DATA_MANAGER_TOOLS__">
                                <span>Data Manager Tools</span>
                            </div>
                            <div id="__DATA_MANAGER_TOOLS__" class="toolSectionBody">
