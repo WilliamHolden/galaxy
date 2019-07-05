@@ -455,7 +455,7 @@ var FolderListView = Backbone.View.extend({
         return _.template(
             `<ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a title="Return to the list of libraries" href="#">Libraries</a>
+                    <a title="Return to the list of libraries" href="javascript:void(0)">Libraries</a>
                 </li>
                 <% _.each(path, function(path_item) { %>
                     <% if (path_item[0] != id) { %>
@@ -483,22 +483,22 @@ var FolderListView = Backbone.View.extend({
                         <input id="select-all-checkboxes" style="margin: 0;" type="checkbox">
                     </th>
                     <th>
-                        <a class="sort-folder-name" title="Click to reverse order" href="#">Name</a>
+                        <a class="sort-folder-name" title="Click to reverse order" href="javascript:void(0)">Name</a>
                         <span title="Sorted alphabetically"
                             class="sort-icon-name fa fa-sort-alpha-<%- order %>"></span>
                     </th>
                     <th style="width:20%;">
-                        <a class="sort-folder-description" title="Click to reverse order" href="#">Description</a>
+                        <a class="sort-folder-description" title="Click to reverse order" href="javascript:void(0)">Description</a>
                         <span title="Sorted alphabetically" class="sort-icon-description fa"></span>
                     </th>
                     <th style="width:5%;">
-                        <a class="sort-folder-file_ext" title="Click to reverse order" href="#">Data Type</a>
+                        <a class="sort-folder-file_ext" title="Click to reverse order" href="javascript:void(0)">Data Type</a>
                         <span title="Sorted alphabetically" class="sort-icon-file_ext fa"></span>
                     </th>
                     <th style="width:10%;">Size</th>
                     <th style="width:160px;">Time Updated (UTC)</th>
                     <th style="width:5%;">
-                        <a class="sort-folder-state" title="Click to reverse order" href="#">State</a>
+                        <a class="sort-folder-state" title="Click to reverse order" href="javascript:void(0)">State</a>
                         <span title="Sorted alphabetically" class="sort-icon-state fa"></span>
                     </th>
                     <th style="width:160px;"></th> 

@@ -652,7 +652,7 @@ var LibraryDatasetView = Backbone.View.extend({
                 <!-- BREADCRUMBS -->
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a title="Return to the list of libraries" href="#">Libraries</a>
+                        <a title="Return to the list of libraries" href="javascript:void(0)">Libraries</a>
                     </li>
                     <% _.each(item.get("full_path"), function(path_item) { %>
                         <% if (path_item[0] != item.id) { %>
@@ -833,7 +833,7 @@ var LibraryDatasetView = Backbone.View.extend({
                 <!-- BREADCRUMBS -->
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a title="Return to the list of libraries" href="#">Libraries</a>
+                        <a title="Return to the list of libraries" href="javascript:void(0)">Libraries</a>
                     </li>
                     <% _.each(item.get("full_path"), function(path_item) { %>
                         <% if (path_item[0] != item.id) { %>
@@ -960,7 +960,7 @@ var LibraryDatasetView = Backbone.View.extend({
                 <!-- BREADCRUMBS -->
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a title="Return to the list of libraries" href="#">Libraries</a>
+                        <a title="Return to the list of libraries" href="javascript:void(0)">Libraries</a>
                     </li>
                     <% _.each(item.get("full_path"), function(path_item) { %>
                         <% if (path_item[0] != item.id) { %>
@@ -1097,7 +1097,7 @@ var LibraryDatasetView = Backbone.View.extend({
                 <!-- BREADCRUMBS -->
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a title="Return to the list of libraries" href="#">Libraries</a>
+                        <a title="Return to the list of libraries" href="javascript:void(0)">Libraries</a>
                     </li>
                     <% _.each(item.get("full_path"), function(path_item) { %>
                         <% if (path_item[0] != item.id) { %>
