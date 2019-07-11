@@ -146,7 +146,6 @@ body {
     position: absolute;
     top: 0;
     height: 100%;
-    overflow: hidden;
     background: white;
 }
 #left {
@@ -162,25 +161,16 @@ body {
 #center {
     left: $panel-width;
     right: $panel-width;
-    overflow: hidden;
-    #center-container {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        #center-panel {
-            display: none;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            padding: $margin-h $margin-v;
-            overflow: auto;
-            background: $brand-white;
-        }
-        #galaxy_main {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
+    overflow: auto;
+    #center-panel {
+     display: none;
+     padding: $margin-h $margin-v;
+     background: $brand-white;
+    }
+    #galaxy_main {
+     position: absolute;
+     width: 100%;
+     height: 100%;
     }
     // Replaces unnecessary if/then logic in base_panels.mako
     &:first-child {
