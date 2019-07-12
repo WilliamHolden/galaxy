@@ -103,14 +103,7 @@ const Collection = Backbone.Collection.extend({
                         const iFrame = document.getElementById("galaxy_main");
                         if (iFrame && iFrame.style.display != "none") {
                             const iFrameDoc = iFrame.contentDocument || iFrame.contentWindow.document;
-                            const canvas = iFrameDoc.getElementsByTagName("canvas")[0];
-                            if (canvas) {
-                                canvas.toBlob(function(blob) {
-                                    saveAs(blob, "galaxy_screenshot.png");
-                                });
-                            } else {
-                                downloadImage(iFrameDoc.getElementsByTagName("body")[0]);
-                            }
+                            downloadImage(iFrameDoc.getElementsByTagName("body")[0]);
                         } else {
                             const center =
                                 document.getElementById("center-panel") ||
