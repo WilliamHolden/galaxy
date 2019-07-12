@@ -228,44 +228,44 @@
 </%def>
 
 <%def name="center_panel()">
-
-    <div class="unified-panel-header" unselectable="on">
-        <div class="unified-panel-header-inner">
-            <div class="panel-header-buttons">
-                <a id="workflow-run-button" class="panel-header-button" href="#" title="Run" style="display: inline-block;" aria-label="Run">
-                    <span class="fa fa-play"></span>
-                </a>
-                <a id="workflow-save-button" class="panel-header-button" href="#" title="Save" style="display: inline-block;" aria-label="Save">
-                    <span class="fa fa-floppy-o"></span>
-                </a>
-                <a id="workflow-options-button" class="panel-header-button" href="#" title="Workflow options" style="display: inline-block;" aria-label="Workflow options">
-                    <span class="fa fa-cog"></span>
-                </a>
-            </div>
-            ${h.to_unicode( stored.name ) | h}
-        </div>
-    </div>
-    <div class="unified-panel-body" id="workflow-canvas-body">
-        <div id="canvas-viewport">
-            <div id="canvas-container" style="position: absolute; width: 100%; height: 100%;"></div>
-        </div>
-        <div id='workflow-parameters-box' style="display:none; position: absolute; right:0px; border: solid grey 1px; padding: 5px; background: #EEEEEE; z-index: 20000; overflow: auto; max-width: 300px; max-height: 300px;">
-            <div style="margin-bottom:5px;">
-                <b>Workflow Parameters</b>
-            </div>
-            <div id="workflow-parameters-container">
+    <div id="workflow-editor">
+        <div class="unified-panel-header" unselectable="on">
+            <div class="unified-panel-header-inner">
+                <div class="panel-header-buttons">
+                    <a id="workflow-run-button" class="panel-header-button" href="#" title="Run" style="display: inline-block;" aria-label="Run">
+                        <span class="fa fa-play"></span>
+                    </a>
+                    <a id="workflow-save-button" class="panel-header-button" href="#" title="Save" style="display: inline-block;" aria-label="Save">
+                        <span class="fa fa-floppy-o"></span>
+                    </a>
+                    <a id="workflow-options-button" class="panel-header-button" href="#" title="Workflow options" style="display: inline-block;" aria-label="Workflow options">
+                        <span class="fa fa-cog"></span>
+                    </a>
+                </div>
+                ${h.to_unicode( stored.name ) | h}
             </div>
         </div>
-        <div class="workflow-overview">
-            <div style="position: relative; overflow: hidden; width: 100%; height: 100%; border-top: solid gray 1px; border-left: solid grey 1px;">
-                <div id="overview" style="position: absolute;">
-                    <canvas width="0" height="0" style="background: white; width: 100%; height: 100%;" id="overview-canvas"></canvas>
-                    <div id="overview-viewport" style="position: absolute; width: 0px; height: 0px; border: solid blue 1px; z-index: 10;"></div>
+        <div class="unified-panel-body" id="workflow-canvas-body">
+            <div id="canvas-viewport">
+                <div id="canvas-container" style="position: absolute; width: 100%; height: 100%;"></div>
+            </div>
+            <div id='workflow-parameters-box' style="display:none; position: absolute; right:0px; border: solid grey 1px; padding: 5px; background: #EEEEEE; z-index: 20000; overflow: auto; max-width: 300px; max-height: 300px;">
+                <div style="margin-bottom:5px;">
+                    <b>Workflow Parameters</b>
+                </div>
+                <div id="workflow-parameters-container">
+                </div>
+            </div>
+            <div class="workflow-overview">
+                <div style="position: relative; overflow: hidden; width: 100%; height: 100%; border-top: solid gray 1px; border-left: solid grey 1px;">
+                    <div id="overview" style="position: absolute;">
+                        <canvas width="0" height="0" style="background: white; width: 100%; height: 100%;" id="overview-canvas"></canvas>
+                        <div id="overview-viewport" style="position: absolute; width: 0px; height: 0px; border: solid blue 1px; z-index: 10;"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 </%def>
 
 <%def name="right_panel()">
