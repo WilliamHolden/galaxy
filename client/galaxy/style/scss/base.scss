@@ -172,6 +172,9 @@ body {
      width: 100%;
      height: 100%;
     }
+    #workflow-container {
+        height: 100%;
+    }
     // Replaces unnecessary if/then logic in base_panels.mako
     &:first-child {
         left: 0;
