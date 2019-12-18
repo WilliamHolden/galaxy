@@ -24,7 +24,7 @@ import CustomBuilds from "mvc/user/user-custom-builds";
 import Tours from "mvc/tours";
 import GridView from "mvc/grid/grid-view";
 import EntryPointGridView from "mvc/entrypoints/view";
-import GridShared from "mvc/grid/grid-shared";
+import GridShared from "components/Grid/GridShared";
 import WorkflowImport from "components/Workflow/WorkflowImport.vue";
 import WorkflowList from "components/Workflow/WorkflowList.vue";
 import HistoryImport from "components/HistoryImport.vue";
@@ -133,14 +133,15 @@ export const getAnalysisRouter = Galaxy =>
 
         show_visualizations: function(action_id) {
             const activeTab = action_id == "list_published" ? "shared" : "user";
-            this.page.display(
-                new GridShared.View({
+            this._display_vue_helper(GridShared, {
+                propsData : {
                     action_id: action_id,
                     plural: "Visualizations",
                     item: "visualization",
                     active_tab: activeTab
-                })
-            );
+                }
+            });
+
         },
 
         show_visualizations_edit: function() {
@@ -259,14 +260,14 @@ export const getAnalysisRouter = Galaxy =>
 
         show_pages: function(action_id) {
             const activeTab = action_id == "list_published" ? "shared" : "user";
-            this.page.display(
-                new GridShared.View({
+            this._display_vue_helper(GridShared, {
+                propsData : {
                     action_id: action_id,
                     plural: "Pages",
                     item: "page",
                     active_tab: activeTab
-                })
-            );
+                }
+            });
         },
 
         show_pages_create: function() {
